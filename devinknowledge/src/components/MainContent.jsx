@@ -1,19 +1,9 @@
 import PropTypes from "prop-types";
+import { Summary } from "./Summary";
 export const MainContent = ({}) => {
   return (
     <main className="main-container">
-      <div className="summary-container">
-        <div className="summary-container__card">
-          <span className="title">back-end</span>
-          <span className="value">1</span>
-        </div>
-        <div className="summary-container__card">
-          <span className="title">total</span>
-          <span className="value">1</span>
-        </div>
-        c
-      </div>
-
+      <Summary />
       <div className="filter-container">
         <input
           placeholder="Busque por uma dica..."
