@@ -1,20 +1,33 @@
 import PropTypes from "prop-types";
+import { useForm } from "react-hook-form";
 export const Sidebar = ({}) => {
+  const { register, handleSubmit } = useForm();
+
+  const handleCreateTip = (data) => {
+    console.log(data);
+  };
+
   return (
     <aside className="sidebar-container">
       <div className="sidebar-container__logo">
         <h1>DEVInKnowledge</h1>
         <span>Learn, Code and Save</span>
       </div>
-      <form>
+      <form onSubmit={handleSubmit(handleCreateTip)}>
         <div className="input-group">
           <label htmlFor="titulo">Titulo</label>
-          <input type="text" placeholder="digite um título..." id="titulo" />
+          <input
+            {...register("titulo")}
+            type="text"
+            placeholder="digite um título..."
+            id="titulo"
+          />
         </div>
 
         <div className="input-group">
           <label htmlFor="categoria">Categoria</label>
           <select
+            {...register("categoria")}
             name="categoria"
             id="categoria"
             placeholder="escolha uma categoria..."
@@ -29,6 +42,7 @@ export const Sidebar = ({}) => {
         <div className="input-group">
           <label htmlFor="linguagem">Linguagem / Skill</label>
           <input
+            {...register("linguagem")}
             type="text"
             id="linguagem"
             placeholder="digite uma categoria..."
@@ -38,6 +52,7 @@ export const Sidebar = ({}) => {
         <div className="input-group">
           <label htmlFor="descricao">Descrição</label>
           <textarea
+            {...register("descricao")}
             type="text"
             id="descricao"
             placeholder="digite uma descrição..."
@@ -48,6 +63,7 @@ export const Sidebar = ({}) => {
         <div className="input-group">
           <label htmlFor="video">Vídeo do Youtube (opcional)</label>
           <input
+            {...register("video")}
             type="text"
             id="video"
             placeholder="digite uma url do YouTube..."
@@ -58,7 +74,7 @@ export const Sidebar = ({}) => {
           <button className="btn primary" type="submit">
             salvar
           </button>
-          <button className="btn secondary" type="submit">
+          <button className="btn secondary" type="button">
             limpar
           </button>
         </div>

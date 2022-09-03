@@ -139,6 +139,11 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   color: var(--color-white);
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.8;
 }
 
 .primary {
