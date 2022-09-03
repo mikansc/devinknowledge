@@ -1,49 +1,31 @@
 import PropTypes from "prop-types";
+import { CardList } from "./CardList";
+import { Filter } from "./Filter";
 import { Summary } from "./Summary";
+import { TipCard } from "./TipCard";
+
+const umaDica = {
+  titulo: "Uma dica",
+  descricao:
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, tempore sequi dolorem reprehenderit quaerat accusamus quas excepturi officia natus, reiciendis architecto. Dolorum quaerat veritatis officia delectus suscipit error. Itaque quos ratione placeat deserunt corrupti voluptate dolorum mollitia optio, atque voluptas praesentium inventore asperiores fugiat omnis ab architecto ut laudantium commodi.",
+  categoria: "front-end",
+  linguagem: "css (flexbox)",
+  video: "https://www.youtube.com/watch?v=3elGSZSWTbM",
+};
+
 export const MainContent = ({}) => {
   return (
     <main className="main-container">
       <Summary />
-      <div className="filter-container">
-        <input
-          placeholder="Busque por uma dica..."
-          type="text"
-          className="inputField"
-        />
-        <button className="searchButton">Buscar</button>
-        <button className="searchButton">Limpar</button>
-      </div>
-
-      <div className="cardList">
-        <div className="tipcard-container">
-          <h2 className="title">Título da dica</h2>
-          <div className="metadata">
-            <div>
-              Linguagem: <span className="metaValue">JavaScript</span>
-            </div>
-            <div>
-              Categoria: <span className="metaValue">Back End</span>
-            </div>
-          </div>
-          <div className="content">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
-            sunt harum et velit, eveniet molestiae est repellat dicta hic
-            aspernatur officiis beatae aliquid itaque sit aut nulla error culpa
-            ratione?
-          </div>
-          <div className="btn-group align-left">
-            <button className="btn primary" type="submit">
-              editar
-            </button>
-            <button className="btn secondary" type="submit">
-              YouTube
-            </button>
-            <button className="btn secondary" type="submit">
-              apagar
-            </button>
-          </div>
-        </div>
-      </div>
+      <Filter />
+      <CardList>
+        <TipCard tip={umaDica} />
+        <TipCard tip={umaDica} />
+        <TipCard tip={umaDica} />
+        <TipCard tip={umaDica} />
+        <TipCard tip={umaDica} />
+        <TipCard tip={umaDica} />
+      </CardList>
     </main>
   );
 };
