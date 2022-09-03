@@ -1,5 +1,7 @@
 import PropTypes from "prop-types";
+import React from "react";
 import { useForm } from "react-hook-form";
+
 export const Sidebar = ({}) => {
   const { register, handleSubmit } = useForm();
 
