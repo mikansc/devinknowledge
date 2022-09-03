@@ -1,10 +1,13 @@
 import PropTypes from "prop-types";
+import { useAppContext } from "../context/app-context";
 import { SummaryCard } from "./SummaryCard";
 export const Summary = ({}) => {
+  const { categories } = useAppContext();
   return (
     <div className="summary-container">
-      <SummaryCard title="back-end" count={18} />
-      <SummaryCard title="front-end" count={129} />
+      {categories.map((category, idx) => (
+        <SummaryCard key={idx} title={category.title} count={category.count} />
+      ))}
     </div>
   );
 };
