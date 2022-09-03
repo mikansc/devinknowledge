@@ -16,8 +16,8 @@ const umaDica = {
 };
 
 export const MainContent = ({}) => {
-  const result = useAppContext();
-  console.log(result);
+  const context = useAppContext();
+  console.log(context);
 
   return (
     <main className="main-container">
